@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddPupil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+        }
+
+        .navbar a {
+          float: left;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        .dropdown {
+          float: left;
+          overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+          font-size: 16px;
+          border: none;
+          outline: none;
+          color: white;
+          padding: 14px 16px;
+          background-color: inherit;
+          font-family: inherit;
+          margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+          background-color: red;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+
+        .dropdown-content a {
+          float: none;
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+
+        .dropdown-content a:hover {
+          background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+    </style>
+    <script>
+      function validation() {
+        let studentid = document.forms["AddPupil"]["studentID"].value;
+        let studentname = document.forms["AddPupil"]["studentname"].value;
+        let studentage = document.forms["AddPupil"]["studentage"].value;
+        let studentaddress = document.forms["AddPupil"]["studentaddress"].value;
+        let studentmedinfo = document.forms["AddPupil"]["studentmednfo"].value;
+        let studentemail = document.forms["AddPupil"]["studentemail"].value;
+        let studentphone = document.forms["AddPupil"]["studentphone"].value;
+        let ClassID = document.forms["AddPupil"]["ClassID"].value;
+        if (studentid == "") {
+          alert("StudentID must be filled");
+          return false;
+        }
+        if (studentname == "") {
+          alert("Student Name must be filled");
+          return false;
+        }
+        if (studentage == "") {
+          alert("Student Age must be filled");
+          return false;
+        }
+        if (studentaddress == "") {
+          alert("Student Address must be filled");
+          return false;
+        }
+        if (ClassID == "") {
+          alert("Class ID must be filled");
+          return false;
+        }
+      }
+    </script>
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">View
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="http://localhost/Ahsan/Pupil.php">Pupil</a>
+            <a href="http://localhost/Ahsan/ParentGuardian.php">Parent/Guardian</a>
+            <a href="http://localhost/Ahsan/Teacher.php">Teacher</a>
+            <a href="http://localhost/Ahsan/Class.php">Class</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Add
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="AddPupil.html">Pupil</a>
+            <a href="AddPG.html">Parent/Guardian</a>
+            <a href="AddTeacher.html">Teacher</a>
+            <a href="AddClass.html">Class</a>
+        </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Delete
+          <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+          <a href="DelPupil.html">Pupil</a>
+          <a href="DelPG.html">Parent/Guardian</a>
+          <a href="DelTeacher.html">Teacher</a>
+          <a href="DelClass.html">Class</a>
+      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Update
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href="UpPupil.html">Pupil</a>
+        <a href="UpPG.html">Parent/Guardian</a>
+        <a href="UpTeacher.html">Teacher</a>
+        <a href="UpClass.html">Class</a>
+    </div>
+</div>
+    <a href="Contact.html">Contact Us</a>
+</div>
+    <form name="AddPupil" method="POST" id="AddPupil" action="http://localhost/Ahsan/AddPupil.php" >
+        <label for="PupilID">Student ID:</label>
+        <input type="text" name="studentid" id="studentid" required><br>
+        <label for="PupilName">Student name:</label>
+        <input type="text" name="studentname" id="studentname" required><br>
+        <label for="PupilAge">Student age:</label>
+        <input type="number" name="studentage" id="studentage" required><br>
+        <label for="PupilAddress">Student address:</label>
+        <input type="text" name="studentaddress" id="studentaddress" required><br>
+        <label for="MedInfo">Student medical information:</label>
+        <input type="text" name="studentmedinfo" id="studentmedinfo"><br>
+        <label for="PupilEmail">Student email:</label>
+        <input type="email" name="studentemail" id="studentemail"><br>
+        <label for="PupilPhone">Student phone:</label>
+        <input type="text" name="studentphone" id="studentphone"><br>
+        <label for="ClassID">Class ID:</label>
+        <input type="text" name="ClassID" id="ClassID" required><br>
+        <input type="submit"><br>
+        <input type="reset"><br>
+    </form>
+</body>
+</html>
